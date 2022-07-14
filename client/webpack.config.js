@@ -23,7 +23,7 @@ module.exports = () => {
         title: 'Webpack Plugin',
       }),
       new InjectManifest({
-        swSrc: './src/sw.js',
+        swSrc: './client./src/src-sw.js',
         swDest: 'service-worker.js',
       }),
       new WebpackPwaManifest({
@@ -31,16 +31,17 @@ module.exports = () => {
         inject: true,
         filename: "manifest.json",
         name: 'JATE',
-        start_url: ".",
+        start_url: "./",
+        publicPath: "./",
         crossorigin: null,
-        short_name: 'JATE',
+        short_name: 'manifest',
         description: 'just another text editor!',
         publicPath: null,
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve('./client./src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons'),
+            destination: path.join('images', 'logo.png'),
           },
         ],
       }),
