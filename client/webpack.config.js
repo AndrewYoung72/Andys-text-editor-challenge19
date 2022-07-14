@@ -29,13 +29,13 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Contact Cards',
-        short_name: 'Contact',
-        description: 'Never forget your contacts!',
-        background_color: '#225ca3',
-        theme_color: '#225ca3',
-        start_url: './',
-        publicPath: './',
+        filename: "manifest.json",
+        name: 'JATE',
+        start_url: ".",
+        crossorigin: null,
+        short_name: 'JATE',
+        description: 'just another text editor!',
+        publicPath: null,
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
