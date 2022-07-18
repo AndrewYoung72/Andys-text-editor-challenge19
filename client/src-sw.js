@@ -33,16 +33,17 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 //   cacheName: "asset-cache"
 // }));
 
-registerRoute(({request}) => ["style", "script", "worker"].includes(request.destination),
-  // new offlineFallback({
-  //   cacheName: "asset-cache"
-  // }),
-  new StaleWhileRevalidate({
-    cacheName: 'page-cache',
+registerRoute(({request}) => request.destination === "image",
+  new CacheFirst ({
+    cacheName: "assets",
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      }),
     ],
   })
+  
 );
