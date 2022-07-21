@@ -36,5 +36,6 @@
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "./",
+  "background_color": "#1e1e1e",
   "description": "just another text editor!"
 }

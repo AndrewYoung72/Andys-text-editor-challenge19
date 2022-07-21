@@ -32,6 +32,7 @@ module.exports = () => {
         // filename: "manifest.json",
         name: "JATE",
         display: "standalone",
+        background_color: "#1e1e1e",
         start_url: "./",
         publicPath: "./",
         short_name: "manifest",
